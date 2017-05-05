@@ -11,10 +11,14 @@ private:
     bool whosTurn;
 public:
     Board();
-    void movePiece();
+    void swapValues(Piece& p1, Piece& p2);
+    void leftUpMove(int x, int y);
+    void rightUpMove(int x, int y);
+    void leftDownMove(int x, int y);
+    void rightDownMove(int x, int y);
     void setPieces();
     void printBoard();
-    int checkwin();
+    void checkwin();
 
 };
 
