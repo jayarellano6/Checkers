@@ -47,7 +47,6 @@ void Board::setPieces()
 void Board::printBoard()
 {
     int numbers[8] = {0,1,2,3,4,5,6,7};
-    cout << "      This is your checker board\n";
     cout <<"     | A   B   C   D   E   F   G   H |\n\n";
     cout << char(196) <<"    ---------------------------------\n";
     for(int i = 0; i < 8; i++)
