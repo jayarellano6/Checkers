@@ -55,6 +55,7 @@ void Game::playGame()
         else if(tolower(letterSide) == 'h')
             y = 7;
     }
+
     cout << "Number side: ";
     cin >> numberSide;
     x = numberSide;
@@ -62,6 +63,8 @@ void Game::playGame()
 
     if(brd.b[x][y].getIsPiece())
     {
+
+
         cout << "Where would you like to move?\n";
         cout << "Enter letter of space to move to: ";
         cin >> letterSide;
@@ -84,7 +87,11 @@ void Game::playGame()
         cout << "Enter number of space to move to: ";
         cin >> numberSide;
         x1 = numberSide;
-        brd.movePiece(x, y, x1, y1);
+        if( brd.checkMove(x,y,x1,y1) == true)
+            brd.movePiece(x, y, x1, y1);
+        else
+            cout << "Wrong!\n";
+            brd.movePiece(x, y, x1, y1);
     }
     else
     {

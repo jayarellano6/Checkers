@@ -3,17 +3,6 @@ using namespace std;
 
 Board::Board()
 {
-    setPieces();
-}
-void Board::swapValues(Piece& p1, Piece& p2)
-{
-    Piece x;
-    x = p1;
-    p1 = p2;
-    p2 = x;
-}
-void Board::setPieces()
-{
     b[0][1].setAllValues(0, 1, true, false, false);
     b[0][3].setAllValues(0, 3, true, false, false);
     b[0][5].setAllValues(0, 5, true, false, false);
@@ -44,6 +33,14 @@ void Board::setPieces()
     b[7][4].setAllValues(7, 4, true, true, false);
     b[7][6].setAllValues(7, 6, true, true, false);
 }
+void Board::swapValues(Piece& p1, Piece& p2)
+{
+    Piece x;
+    x = p1;
+    p1 = p2;
+    p2 = x;
+}
+
 void Board::printBoard()
 {
     int numbers[8] = {0,1,2,3,4,5,6,7};
@@ -83,5 +80,27 @@ void Board::rightDownMove(int x, int y)
 void Board::leftDownMove(int x, int y)
 {
     swapValues(b[x+1][y-1], b[x][y]);
+}
+
+bool Board::checkMove(int x, int y, int x1, int y1)
+{
+    if((x+1 == x1 && y + 1 == y1) || (x+1 == x1 && y - 1 == y1))
+    {
+        if(b[x1][y1].getIsPiece() == false)
+            return true;
+    }
+    else if ((x+2 == x1 && y + 2 == y1) || (x+2 == x1 && y - 2 == y1))
+    {
+        if(b[x + 1][y + 1].getIsPiece() || b[x + 1][y - 1].getIsPiece())
+            return true;
+            // We could call an eaten function here?
+    }
+    return false;
+
+}
+
+void Board::movePiece(int x, int y, int x1, int y1)
+{
+    swapValues(b[x][y],b[x1][y1]);
 }
 
