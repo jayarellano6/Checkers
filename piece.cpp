@@ -74,6 +74,10 @@ void Piece::setIsRed(bool new_isRed)
 void Piece::setIsKing(bool new_isKing)
 {
     isKing = new_isKing;
+    if(isKing == true)
+    {
+        pieceDisplay = toupper(pieceDisplay);
+    }
 }
 void Piece::operator =(const Piece& p2)
 {
