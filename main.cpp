@@ -6,8 +6,11 @@ using namespace std;
 
 int main()
 {
-    Game g;
-    cout << "\t   Welcome to Checkers!\n\n";
-    g.playGame();
-
+    char choice = ' ';
+    do{
+        Game g;
+        g.playGame();
+        cout << "Would you like to start a new game (y - yes / n - no): ";
+        cin >> choice;
+    }while(choice != 'n');
 }
