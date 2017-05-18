@@ -35,4 +35,3 @@ public:
 };
 
 #endif // PIECE_H_INCLUDED
-
