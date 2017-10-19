@@ -1,4 +1,6 @@
 #include "piece.h"
+
+=======
 Piece::Piece()
 {
     x = 0;
@@ -88,5 +90,6 @@ void Piece::operator =(const Piece& p2)
     isRed = p2.isRed;
     isKing = p2.isKing;
 }
+
 
 

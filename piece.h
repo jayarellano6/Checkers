@@ -1,5 +1,18 @@
 #ifndef PIECE_H_INCLUDED
 #define PIECE_H_INCLUDED
+
+
+class Piece
+{
+    private:
+        bool isKing;
+        char color;
+
+    public:
+        Piece();
+        void setColor(char color){this->color = color;}
+        char getColor()const{return color;}
+=======
 #include <cassert>
 #include <fstream>
 using namespace std;
@@ -31,6 +44,7 @@ public:
     bool getIsKing() const {return isKing;}
 
     void operator =(const Piece& p2);
+
 
 };
 
